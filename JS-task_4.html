@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Show Date and Time in IST</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Show Date and Time in IST</h1>
+  <button onclick="showDate()">Show Date</button>
+  <button onclick="showTime()">Show Time</button>
+  <p id="output"></p>
+
+  <script>
+    function showDate() {
+      var currentDate = new Date();
+      var options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "Asia/Kolkata"
+      };
+      var dateStr = currentDate.toLocaleDateString("en-IN", options);
+      document.getElementById("output").textContent = "Current Date in IST: " + dateStr;
+    }
+
+    function showTime() {
+      var currentDate = new Date();
+      var options = {
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        timeZone: "Asia/Kolkata"
+      };
+      var timeStr = currentDate.toLocaleTimeString("en-IN", options);
+      document.getElementById("output").textContent = "Current Time in IST: " + timeStr;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: palevioletred;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Align form elements to the left */
+        }
+
+        h2 {
+            font-style: italic;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        span.strength {
+            display: block;
+            font-size: 12px;
+        }
+
+        .weak {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .strong {
+            color: green;
+        }
+
+        .gender-label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .gender-options {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .gender-options label {
+            margin-right: 10px;
+            color: #333;
+        }
+
+        .age-label,
+        .phone-label,
+        .address-label,
+        .state-label,
+        .country-label,
+        .languages-label,
+        .declare-label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .languages-label input {
+            margin-right: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #405de6;
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #364fc7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" required oninput="checkStrength(this.value, 'first-name-strength')">
+        <span id="first-name-strength" class="strength"></span>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" required oninput="checkStrength(this.value, 'last-name-strength')">
+        <span id="last-name-strength" class="strength"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required oninput="checkStrength(this.value, 'password-strength')">
+        <span id="password-strength" class="strength"></span>
+
+        <label for="re-enter-password">Re-enter Password:</label>
+        <input type="password" id="re-enter-password" required oninput="checkPasswordMatch()">
+        <span id="password-match" class="strength"></span>
+
+        <div class="gender-label">Gender:</div>
+        <div class="gender-options">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="others">Others</label>
+            <input type="radio" name="gender" id="others" value="Others">
+        </div>
+
+        <label class="age-label" for="age">Age:</label>
+        <input type="number" id="age" required>
+
+        <label class="phone-label" for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required>
+
+        <label class="address-label" for="address">Address:</label>
+        <textarea id="address" required></textarea>
+
+        <label class="state-label" for="state">State:</label>
+        <input type="text" id="state" required>
+
+        <label class="country-label" for="country">Country:</label>
+        <select id="country" required>
+            <option value="USA">India</option>
+        </select>
+
+        <label class="languages-label">Languages Known:</label>
+        <input type="checkbox" id="english" value="English"> English
+        <input type="checkbox" id="hindi" value="Hindi"> Hindi
+
+        <label class="declare-label" for="declare">Hereby I declare all the given details are True:</label>
+        <input type="checkbox" id="declare" required>
+
+        <div class="buttons">
+            <button type="button" onclick="redirectToEthnus()">Login to Ethnus</button>
+            <button type="submit">Register</button>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            return true;
+        }
+
+        function redirectToEthnus() {
+            window.location.href = 'https://www.ethnus.com';
+        }
+
+        function checkStrength(password, strengthId) {
+            const strengthSpan = document.getElementById(strengthId);
+            if (password.length < 6) {
+                strengthSpan.textContent = 'Strength: Poor';
+                strengthSpan.className = 'weak';
+            } else if (password.length < 10) {
+                strengthSpan.textContent = 'Strength: Medium';
+                strengthSpan.className = 'medium';
+            } else {
+                strengthSpan.textContent = 'Strength: Strong';
+                strengthSpan.className = 'strong';
+            }
+        }
+
+        function checkPasswordMatch() {
+            const password = document.getElementById('password').value;
+            const reenterPassword = document.getElementById('re-enter-password').value;
+            const matchSpan = document.getElementById('password-match');
+
+            if (password === reenterPassword) {
+                matchSpan.textContent = 'Password Matched';
+                matchSpan.className = 'strong';
+            } else {
+                matchSpan.textContent = 'Password Mismatch';
+                matchSpan.className = 'weak';
+            }
+        }
+    </script>
+</body>
+</html>

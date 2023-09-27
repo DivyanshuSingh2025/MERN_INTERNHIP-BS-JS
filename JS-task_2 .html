@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetize String</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Alphabetize String</h1>
+  <input type="text" id="inputString" placeholder="Enter a string">
+  <button onclick="alphabetizeString()">Alphabetize</button>
+  <p id="output"></p>
+
+  <script>
+    function alphabetizeString() {
+      // Get the input string from the text field
+      var inputElement = document.getElementById("inputString");
+      var inputString = inputElement.value;
+
+      // Remove any whitespace and convert the string to lowercase
+      inputString = inputString.replace(/\s/g, "").toLowerCase();
+
+      // Convert the string to an array of characters, sort it, and join it back into a string
+      var sortedString = inputString.split("").sort().join("");
+
+      // Display the sorted string
+      var outputElement = document.getElementById("output");
+      outputElement.textContent = "Alphabetized String: " + sortedString;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Bootstrap Task 5</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        display: block;
+    }
+
+    .btn {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="row">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+            <form class="needs-validation" novalidate>
+                <div class="m-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="fname"><i class="fa-solid fa-user fa-lg"></i></span>
+                        <input type="text" class="form-control" id="fname" /required>
+                        <div class="invalid-feedback">Please supply your first name</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="lname"><i class="fa-solid fa-user fa-lg"></i></span>
+                        <input type="text" class="form-control" id="lname" /required>
+                        <div class="invalid-feedback">Please supply your last name</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="email"><i class="fa-solid fa-envelope fa-lg"></i></span>
+                        <input type="email" class="form-control" id="email" /required>
+                        <div class="invalid-feedback">Please supply your email address</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="number" class="form-label">Phone #</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="number"><i class="fa-solid fa-phone fa-lg"></i></span>
+                        <input type="number" class="form-control" id="number" /required>
+                        <div class="invalid-feedback">Please supply your phone number</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="address" class="form-label">Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="address"><i
+                                class="fa-solid fa-location-dot fa-lg"></i></span>
+                        <input type="text" class="form-control" id="address" /required>
+                        <div class="invalid-feedback">Please supply your street address</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="city" class="form-label">City</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="city"><i class="fa-solid fa-house fa-lg"></i></span>
+                        <input type="text" class="form-control" id="city" /required>
+                        <div class="invalid-feedback">Please supply your city</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="state" class="form-label">State</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="state"><i class="fa-solid fa-list fa-lg"></i></span>
+                        <select id="state" class="form-control">
+                            <option>Please select your state</option>
+                            <option value="uttarpradesh">Uttar Pradesh</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="uttrakhand">Uttra Khand</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="hosting" class="form-label">Do you have hosting ?</label>
+                    <input type="radio" id="hosting"> Yes
+                    <input type="radio" id="hosting"> No
+                </div>
+                <div class="m-3">
+                    <label for="Description" class="form-label">Project Description</label>
+                    <textarea id="Description" class="form-control" rows="1"
+                        placeholder="Enter a basic discription"></textarea>
+                </div>
+                <button class="btn btn-warning">Send <i class="fa-solid fa-paper-plane fa-lg"></i></button>
+            </form>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/f370d69cb1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

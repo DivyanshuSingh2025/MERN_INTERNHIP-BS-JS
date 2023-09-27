@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Multiplication and Division Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 90%;
+      margin: 10px 0;
+    }
+
+    input[type="button"] {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Multiplication and Division Calculator</h1>
+  <form>
+    1st Number : <input type="text" id="firstNumber" /><br>
+    2nd Number: <input type="text" id="secondNumber" /><br>
+    <input type="button" onClick="multiplyBy()" Value="Multiply" />
+    <input type="button" onClick="divideBy()" Value="Divide" />
+  </form>
+  <p>The Result is : <br>
+    <span id="result"></span>
+  </p>
+
+  <script>
+    function multiplyBy() {
+      num1 = document.getElementById("firstNumber").value;
+      num2 = document.getElementById("secondNumber").value;
+      document.getElementById("result").textContent = num1 * num2;
+    }
+
+    function divideBy() {
+      num1 = document.getElementById("firstNumber").value;
+      num2 = document.getElementById("secondNumber").value;
+      document.getElementById("result").textContent = num1 / num2;
+    }
+  </script>
+</body>
+</html>

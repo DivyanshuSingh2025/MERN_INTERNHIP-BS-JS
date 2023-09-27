@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>BOOTSTRAP TASK 3</title>
+</head>
+
+<style>
+    .navbar,
+    .btn,
+    .card-header {
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .features {
+        margin-top: 45px;
+    }
+
+    .footer {
+        margin-top: 75px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar  navbar-expand-lg bg-body-tertiary ">
+            <div class="navbar_items container-fluid">
+                <div class="navbar_name">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link navbar-brand" href="#">Company Name</a></li>
+                    </ul>
+                </div>
+                <div class="navbar_features">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="#">Features</a></li>
+                        <li><a class="nav-link" href="#">Enterprise</a></li>
+                        <li><a class="nav-link" href="#">Support</a></li>
+                        <li><a class="nav-link" href="#">Pricing</a></li>
+                        <form>
+                            <input type="button" class="form-control btn btn-outline-info" value="Sign Up">
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-auto col-10 col-md-8 col-lg-6">
+        <div class="features text-center">
+            <h1 class="display-4">Pricing</h1>
+            <br>
+            <p class="text-muted">Qucikly build an effective pricing tabel for your potential customers with this
+                <br>Bootstrap
+                example.It's
+                built with default Bootstrap components and utilizes with <br> little customization.
+            </p>
+
+            <div class="row ">
+                <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <header>
+                                Free
+                            </header>
+                        </div>
+                        <div class="card-body">
+                            <h4>$0 <small class="text-muted">/mo</small></h4>
+                            <p class="card-text">10 users included</p>
+                            <p class="card-text">2 GB of storage</p>
+                            <p class="card-text">Email Support</p>
+                            <p class="card-text">Help center access</p>
+                        </div>
+                        <a href="#" class="btn btn-outline-info">Sign up for free</a>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <header>
+                                Pro
+                            </header>
+                        </div>
+                        <div class="card-body">
+                            <h4>$15 <small class="text-muted">/mo</small></h4>
+                            <p class="card-text">20 users included</p>
+                            <p class="card-text">10 GB of storage</p>
+                            <p class="card-text">Priority email Support</p>
+                            <p class="card-text">Help center access</p>
+                        </div>
+                        <a href="#" class="btn btn-primary">Get started</a>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <header>
+                                Enterprise
+                            </header>
+                        </div>
+                        <div class="card-body">
+                            <h4>$29 <small class="text-muted">/mo</small></h4>
+                            <p class="card-text">30 users included</p>
+                            <p class="card-text">15 GB of storage</p>
+                            <p class="card-text">Phone and email Support</p>
+                            <p class="card-text">Help center access</p>
+                        </div>
+                        <a href="#" class="btn btn-primary">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mx-auto col-10 col-md-8 col-lg-6">
+        <div class="container row footer">
+            <div class="footer_img col col-sm-6 col-6 col-lg-3 col-md-6">
+                <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="Bootstrap Logo">
+                <br>
+                <p class="text-muted">© 2023 <br>- Divyanshu Singh
+                </p>
+            </div>
+
+            <div class="footer_features col col-sm-6 col-6 col-lg-3 col-md-6">
+                <h5>Features</h5>
+                <ul class="list-unstyled">
+                    <li><a class="text-muted" href="#">Cool Stuff</a></li>
+                    <li><a class="text-muted" href="#">Randm feature</a></li>
+                    <li><a class="text-muted" href="#">Team feature</a></li>
+                    <li><a class="text-muted" href="#">Stuff for develoaers</a></li>
+                    <li><a class="text-muted" href="#">Another one</a></li>
+                    <li><a class="text-muted" href="#">Last time</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_resources col col-sm-6 col-6 col-lg-3 col-md-6">
+                <h5>Resources</h5>
+                <ul class="list-unstyled">
+                    <li><a class="text-muted" href="#">Resource</a></li>
+                    <li><a class="text-muted" href="#">Resource name</a></li>
+                    <li><a class="text-muted" href="#">Another Resource</a></li>
+                    <li><a class="text-muted" href="#">Final Resource</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_about col col-sm-6 col-6 col-lg-3 col-md-6">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Location</a></li>
+                    <li><a class="text-muted" href="#">Privacy</a></li>
+                    <li><a class="text-muted" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/f370d69cb1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
